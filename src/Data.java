@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
@@ -24,6 +25,33 @@ public class Data {
         for (int i = 0; i < size; i++) {
             MA[i] = getVectorInput(String.format("Row %d",i+1),size,scanner);
         }return MA;
+    }
+
+    int[][] setMatrixByOnes(int[][] MM){
+        for(int i = 0; i < MM.length; i++){
+            MM[i] = setVectorByOne(MM[i]);
+        }
+        return MM;
+    }
+
+    int[][] setMatrixByRandom(int[][] MM){
+        for(int i = 0; i < MM.length; i++){
+            MM[i] = setVectorByRandom(MM[i]);
+        }
+        return MM;
+    }
+
+    int[] setVectorByOne(int[] A){
+        for (int i = 0; i < A.length; i++) {
+            A[i]=1;
+        }return A;
+    }
+
+    int[] setVectorByRandom(int[] A){
+        Random random = new Random();
+        for (int i = 0; i < A.length; i++) {
+            A[i]=random.nextInt(10);
+        }return A;
     }
 
     int[][] multiplyMatrix(int[][] MA, int[][] MB, int size){
