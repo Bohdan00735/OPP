@@ -1,22 +1,24 @@
-package workWithMonitors;
+package RGR;
 
-class Main {
-    final static int N = 1000;
+
+public class Main {
+    final static int N = 2000;
     final static int P = 4;
     final static int H = N/P;
 
-    public static int[] V = new int[N];
-    public static int[] B = new int[N];
-    public static int[] Z = new int[N];
     public static int[] A = new int[N];
-    public static int[] E = new int[N];
+    public static int[] B = new int[N];
+    public static int[] C = new int[N];
+    public static int[] D = new int[N];
+    public static int[] Z = new int[N];
+    public static int[] V = new int[N];
 
-    public static int[][] MC = new int[N][N];
-    public static int[][] MD = new int[N][N];
+    public static int[][] MR = new int[N][N];
+
 
     public static void main(String[] args) {
-        SynchronisationMonitor synchronisationMonitor = new SynchronisationMonitor();
-        VariablesMonitor variablesMonitor = new VariablesMonitor();
+        SynMon synchronisationMonitor = new SynMon();
+        VarMon variablesMonitor = new VarMon();
 
         F1 T1 = new F1(synchronisationMonitor,variablesMonitor,N,H);
         F2 T2 = new F2(synchronisationMonitor,variablesMonitor,N,H);
@@ -28,5 +30,4 @@ class Main {
         T3.start();
         T4.start();
     }
-
 }

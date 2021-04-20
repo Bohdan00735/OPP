@@ -1,7 +1,5 @@
 package workWithMonitors;
 
-import java.util.Arrays;
-
 public class F3 extends MyThread{
     public F3(SynchronisationMonitor synchronisationMonitor, VariablesMonitor variablesMonitor, int n, int H) {
         super(synchronisationMonitor, variablesMonitor, n, H);

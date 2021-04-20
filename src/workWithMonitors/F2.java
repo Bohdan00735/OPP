@@ -1,7 +1,5 @@
 package workWithMonitors;
 
-import java.util.Arrays;
-
 public class F2 extends MyThread{
     public F2(SynchronisationMonitor synchronisationMonitor, VariablesMonitor variablesMonitor, int n, int H) {
         super(synchronisationMonitor, variablesMonitor, n, H);
@@ -19,7 +17,7 @@ public class F2 extends MyThread{
         int[] R2 = variablesMonitor.copyR();
 
         int[] V2 = calculations.multiplyMatrixOnVector(R2,Main.MC,H,2*H);
-        if (H >= 0) System.arraycopy(V2, H, Main.V, H,2*H);
+        if (H >= 0) System.arraycopy(V2, H, Main.V, H,H);
         synchronisationMonitor.signalReadyV();
         synchronisationMonitor.waitV();
 

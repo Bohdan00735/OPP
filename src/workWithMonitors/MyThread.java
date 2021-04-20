@@ -1,6 +1,7 @@
 package workWithMonitors;
 
 public class MyThread extends Thread{
+
     SynchronisationMonitor synchronisationMonitor;
     VariablesMonitor variablesMonitor;
     int N;
